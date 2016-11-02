@@ -1,0 +1,705 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		005BFF809BD293A9E54CDFB5D4AE0A5A /* Pods-CKPhotoLibraryManager_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FB8DB201337D5B4DE0490FFE77A9A5 /* Pods-CKPhotoLibraryManager_Tests-dummy.m */; };
+		353D2F380A7CF5679D88681A15318101 /* CKPhotoLibraryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABB2A5A05DC2EE8F4F130DB349EEC34 /* CKPhotoLibraryManager.swift */; };
+		5CE3774F3EEAD8C121D1F56DA8F1777F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		60B010B85643C444D32BCE01480F8EE4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		89CB603673E3A40D705B2634CA9A54D5 /* CKPhotoLibraryManager-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 588B09B6E226980E88345E55DD6E3E8E /* CKPhotoLibraryManager-dummy.m */; };
+		AF92D52E25A85C772AC4C9ED65098890 /* Pods-CKPhotoLibraryManager_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C371FD9B4E25D7CE1B73B5D58CD8771A /* Pods-CKPhotoLibraryManager_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AFBF4135F4C01D13216AD69153735BE0 /* Pods-CKPhotoLibraryManager_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8AC5586CC7D146DAAC91B4A0CA03125D /* Pods-CKPhotoLibraryManager_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DC73762236BAAF6B4E0D37BF8247073D /* CKPhotoLibraryManager-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 34BA8E7479C84B95B740D7284D3F2450 /* CKPhotoLibraryManager-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E69173C81A844CB43329ED66C9BFCC6D /* Pods-CKPhotoLibraryManager_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1894C0357CB0CA87243732EB62A436AE /* Pods-CKPhotoLibraryManager_Example-dummy.m */; };
+		F22D9EF1FB9CA1E4A87DC566B9BD256F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D6796CD402AB0FB8E511DF4940E5E3AE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E63A4B4AAA719FDDF8BE78385B69E72C;
+			remoteInfo = CKPhotoLibraryManager;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		05617D12FB271185D4C55EE250688372 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		10239E1310FD59224CF614833A2ED4C1 /* Pods-CKPhotoLibraryManager_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CKPhotoLibraryManager_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		1894C0357CB0CA87243732EB62A436AE /* Pods-CKPhotoLibraryManager_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CKPhotoLibraryManager_Example-dummy.m"; sourceTree = "<group>"; };
+		18A786A2C7314B4D6038A29F30B79E49 /* Pods-CKPhotoLibraryManager_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CKPhotoLibraryManager_Example.release.xcconfig"; sourceTree = "<group>"; };
+		1AD965127047C62211D7DFD07BB788F2 /* CKPhotoLibraryManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CKPhotoLibraryManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F10313C381B968827959A9C2B1C5497 /* Pods-CKPhotoLibraryManager_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CKPhotoLibraryManager_Example-resources.sh"; sourceTree = "<group>"; };
+		2AB1B45114B4D2C04D2B3C7D72BA96D2 /* Pods_CKPhotoLibraryManager_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CKPhotoLibraryManager_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		31A4D15E81EDD73C468DF7930A18B6D8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		34BA8E7479C84B95B740D7284D3F2450 /* CKPhotoLibraryManager-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CKPhotoLibraryManager-umbrella.h"; sourceTree = "<group>"; };
+		3F35434266649FD1490D2615A241B6AA /* CKPhotoLibraryManager.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = CKPhotoLibraryManager.modulemap; sourceTree = "<group>"; };
+		4682A385A0BFF4FE914133B888A5AA95 /* Pods_CKPhotoLibraryManager_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CKPhotoLibraryManager_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		588B09B6E226980E88345E55DD6E3E8E /* CKPhotoLibraryManager-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CKPhotoLibraryManager-dummy.m"; sourceTree = "<group>"; };
+		6248E6772BEE0A1A3D4480D9485AE883 /* CKPhotoLibraryManager-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CKPhotoLibraryManager-prefix.pch"; sourceTree = "<group>"; };
+		646CC9BD9D1A6EA69569652505DAA2B9 /* Pods-CKPhotoLibraryManager_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CKPhotoLibraryManager_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		6ABB2A5A05DC2EE8F4F130DB349EEC34 /* CKPhotoLibraryManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CKPhotoLibraryManager.swift; sourceTree = "<group>"; };
+		72521BBF6CC20255FD83A973249E454F /* Pods-CKPhotoLibraryManager_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-CKPhotoLibraryManager_Tests.modulemap"; sourceTree = "<group>"; };
+		74BBC6DC229BCE941C3278EE6BB00438 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80FB8DB201337D5B4DE0490FFE77A9A5 /* Pods-CKPhotoLibraryManager_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CKPhotoLibraryManager_Tests-dummy.m"; sourceTree = "<group>"; };
+		870F51402BA3B82B9B03F898B8F58EC5 /* Pods-CKPhotoLibraryManager_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CKPhotoLibraryManager_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		8A1739752DA1543EF445FF7AF6BFFCA5 /* Pods-CKPhotoLibraryManager_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-CKPhotoLibraryManager_Example.modulemap"; sourceTree = "<group>"; };
+		8AC5586CC7D146DAAC91B4A0CA03125D /* Pods-CKPhotoLibraryManager_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CKPhotoLibraryManager_Example-umbrella.h"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A776747106DA0A420942034614801B9F /* CKPhotoLibraryManager.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CKPhotoLibraryManager.xcconfig; sourceTree = "<group>"; };
+		A92130344D7F2FFE9C5DDED6467DAAAD /* Pods-CKPhotoLibraryManager_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CKPhotoLibraryManager_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		BB93C251932D87E737723275B3E04D11 /* Pods-CKPhotoLibraryManager_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CKPhotoLibraryManager_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		C22F52563540B29124353435DE3AFAB9 /* Pods-CKPhotoLibraryManager_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CKPhotoLibraryManager_Tests-resources.sh"; sourceTree = "<group>"; };
+		C371FD9B4E25D7CE1B73B5D58CD8771A /* Pods-CKPhotoLibraryManager_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CKPhotoLibraryManager_Tests-umbrella.h"; sourceTree = "<group>"; };
+		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		CECEFEE4C99BE8539C42AA25A8238CAC /* Pods-CKPhotoLibraryManager_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CKPhotoLibraryManager_Example-frameworks.sh"; sourceTree = "<group>"; };
+		D721D0C7FC4581CA1C6977AA34405DA3 /* Pods-CKPhotoLibraryManager_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CKPhotoLibraryManager_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		E43375B321AC16D57C4C9559375FD03F /* Pods-CKPhotoLibraryManager_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CKPhotoLibraryManager_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		EF996182047640461A854E93C7F16AC6 /* Pods-CKPhotoLibraryManager_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CKPhotoLibraryManager_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5EE29370AA8EE7125C1BF9F7A0633ACD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5CE3774F3EEAD8C121D1F56DA8F1777F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7591C1B6A1D24E970A3C3CE56CC60AD9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60B010B85643C444D32BCE01480F8EE4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABF90CB562FFD49E82A56B431A9EBD6D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F22D9EF1FB9CA1E4A87DC566B9BD256F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		02CE84D25BB6FE540602F86ED1C40829 /* Pods-CKPhotoLibraryManager_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				31A4D15E81EDD73C468DF7930A18B6D8 /* Info.plist */,
+				72521BBF6CC20255FD83A973249E454F /* Pods-CKPhotoLibraryManager_Tests.modulemap */,
+				D721D0C7FC4581CA1C6977AA34405DA3 /* Pods-CKPhotoLibraryManager_Tests-acknowledgements.markdown */,
+				A92130344D7F2FFE9C5DDED6467DAAAD /* Pods-CKPhotoLibraryManager_Tests-acknowledgements.plist */,
+				80FB8DB201337D5B4DE0490FFE77A9A5 /* Pods-CKPhotoLibraryManager_Tests-dummy.m */,
+				BB93C251932D87E737723275B3E04D11 /* Pods-CKPhotoLibraryManager_Tests-frameworks.sh */,
+				C22F52563540B29124353435DE3AFAB9 /* Pods-CKPhotoLibraryManager_Tests-resources.sh */,
+				C371FD9B4E25D7CE1B73B5D58CD8771A /* Pods-CKPhotoLibraryManager_Tests-umbrella.h */,
+				646CC9BD9D1A6EA69569652505DAA2B9 /* Pods-CKPhotoLibraryManager_Tests.debug.xcconfig */,
+				10239E1310FD59224CF614833A2ED4C1 /* Pods-CKPhotoLibraryManager_Tests.release.xcconfig */,
+			);
+			name = "Pods-CKPhotoLibraryManager_Tests";
+			path = "Target Support Files/Pods-CKPhotoLibraryManager_Tests";
+			sourceTree = "<group>";
+		};
+		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		65AFB64FFEAD3F5EA7108A4AE119AFCE /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3F35434266649FD1490D2615A241B6AA /* CKPhotoLibraryManager.modulemap */,
+				A776747106DA0A420942034614801B9F /* CKPhotoLibraryManager.xcconfig */,
+				588B09B6E226980E88345E55DD6E3E8E /* CKPhotoLibraryManager-dummy.m */,
+				6248E6772BEE0A1A3D4480D9485AE883 /* CKPhotoLibraryManager-prefix.pch */,
+				34BA8E7479C84B95B740D7284D3F2450 /* CKPhotoLibraryManager-umbrella.h */,
+				74BBC6DC229BCE941C3278EE6BB00438 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/CKPhotoLibraryManager";
+			sourceTree = "<group>";
+		};
+		6E7063689F5C3EFD1CC93929B3C46E95 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				6ABB2A5A05DC2EE8F4F130DB349EEC34 /* CKPhotoLibraryManager.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				C59EC2E9C2AC49B9224BC10B31FF92A1 /* Development Pods */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				B71FAFB137B7154A6603B9FCF8BDE089 /* Products */,
+				8FEF97D90F17958C7D27EA5A2C09119E /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		8FEF97D90F17958C7D27EA5A2C09119E /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				9F6EA23965C05080C1CDEB2AE41C6F9B /* Pods-CKPhotoLibraryManager_Example */,
+				02CE84D25BB6FE540602F86ED1C40829 /* Pods-CKPhotoLibraryManager_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		9F6EA23965C05080C1CDEB2AE41C6F9B /* Pods-CKPhotoLibraryManager_Example */ = {
+			isa = PBXGroup;
+			children = (
+				05617D12FB271185D4C55EE250688372 /* Info.plist */,
+				8A1739752DA1543EF445FF7AF6BFFCA5 /* Pods-CKPhotoLibraryManager_Example.modulemap */,
+				E43375B321AC16D57C4C9559375FD03F /* Pods-CKPhotoLibraryManager_Example-acknowledgements.markdown */,
+				EF996182047640461A854E93C7F16AC6 /* Pods-CKPhotoLibraryManager_Example-acknowledgements.plist */,
+				1894C0357CB0CA87243732EB62A436AE /* Pods-CKPhotoLibraryManager_Example-dummy.m */,
+				CECEFEE4C99BE8539C42AA25A8238CAC /* Pods-CKPhotoLibraryManager_Example-frameworks.sh */,
+				1F10313C381B968827959A9C2B1C5497 /* Pods-CKPhotoLibraryManager_Example-resources.sh */,
+				8AC5586CC7D146DAAC91B4A0CA03125D /* Pods-CKPhotoLibraryManager_Example-umbrella.h */,
+				870F51402BA3B82B9B03F898B8F58EC5 /* Pods-CKPhotoLibraryManager_Example.debug.xcconfig */,
+				18A786A2C7314B4D6038A29F30B79E49 /* Pods-CKPhotoLibraryManager_Example.release.xcconfig */,
+			);
+			name = "Pods-CKPhotoLibraryManager_Example";
+			path = "Target Support Files/Pods-CKPhotoLibraryManager_Example";
+			sourceTree = "<group>";
+		};
+		AD95B0D354751F4C9B2E0F7F727AE490 /* CKPhotoLibraryManager */ = {
+			isa = PBXGroup;
+			children = (
+				6E7063689F5C3EFD1CC93929B3C46E95 /* Classes */,
+			);
+			path = CKPhotoLibraryManager;
+			sourceTree = "<group>";
+		};
+		B71FAFB137B7154A6603B9FCF8BDE089 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1AD965127047C62211D7DFD07BB788F2 /* CKPhotoLibraryManager.framework */,
+				4682A385A0BFF4FE914133B888A5AA95 /* Pods_CKPhotoLibraryManager_Example.framework */,
+				2AB1B45114B4D2C04D2B3C7D72BA96D2 /* Pods_CKPhotoLibraryManager_Tests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C59EC2E9C2AC49B9224BC10B31FF92A1 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F94BD151056500ED2A959D5DA8FEBF21 /* CKPhotoLibraryManager */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		F94BD151056500ED2A959D5DA8FEBF21 /* CKPhotoLibraryManager */ = {
+			isa = PBXGroup;
+			children = (
+				AD95B0D354751F4C9B2E0F7F727AE490 /* CKPhotoLibraryManager */,
+				65AFB64FFEAD3F5EA7108A4AE119AFCE /* Support Files */,
+			);
+			name = CKPhotoLibraryManager;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		965D2FD39905CFD5712C8BD41ECD3252 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFBF4135F4C01D13216AD69153735BE0 /* Pods-CKPhotoLibraryManager_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A82462127CEDA492C840F97F5FF9D8F9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF92D52E25A85C772AC4C9ED65098890 /* Pods-CKPhotoLibraryManager_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F62ED25789CFCA76207BEC4DC5FFA51B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC73762236BAAF6B4E0D37BF8247073D /* CKPhotoLibraryManager-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		49B685E359840C31FFF48FB0C4245E86 /* Pods-CKPhotoLibraryManager_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04A1F31570425F3A922CFE3E3CE889AD /* Build configuration list for PBXNativeTarget "Pods-CKPhotoLibraryManager_Example" */;
+			buildPhases = (
+				3E9E93EE96C92F23387A310686F775E6 /* Sources */,
+				7591C1B6A1D24E970A3C3CE56CC60AD9 /* Frameworks */,
+				965D2FD39905CFD5712C8BD41ECD3252 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B179E827636B7BA4AD64704B7471F20A /* PBXTargetDependency */,
+			);
+			name = "Pods-CKPhotoLibraryManager_Example";
+			productName = "Pods-CKPhotoLibraryManager_Example";
+			productReference = 4682A385A0BFF4FE914133B888A5AA95 /* Pods_CKPhotoLibraryManager_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E63A4B4AAA719FDDF8BE78385B69E72C /* CKPhotoLibraryManager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B398D617644F7D2E68B385F3379BD93 /* Build configuration list for PBXNativeTarget "CKPhotoLibraryManager" */;
+			buildPhases = (
+				A42A304B631946095ACB71AEE726E45C /* Sources */,
+				5EE29370AA8EE7125C1BF9F7A0633ACD /* Frameworks */,
+				F62ED25789CFCA76207BEC4DC5FFA51B /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CKPhotoLibraryManager;
+			productName = CKPhotoLibraryManager;
+			productReference = 1AD965127047C62211D7DFD07BB788F2 /* CKPhotoLibraryManager.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		FB5BF29F22266C659D405032BF159218 /* Pods-CKPhotoLibraryManager_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 832435279A3102B76FBB5A0881527C0B /* Build configuration list for PBXNativeTarget "Pods-CKPhotoLibraryManager_Tests" */;
+			buildPhases = (
+				5E7EA7B2CC1BFAB26ACFF0CE86C3519E /* Sources */,
+				ABF90CB562FFD49E82A56B431A9EBD6D /* Frameworks */,
+				A82462127CEDA492C840F97F5FF9D8F9 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-CKPhotoLibraryManager_Tests";
+			productName = "Pods-CKPhotoLibraryManager_Tests";
+			productReference = 2AB1B45114B4D2C04D2B3C7D72BA96D2 /* Pods_CKPhotoLibraryManager_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = B71FAFB137B7154A6603B9FCF8BDE089 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E63A4B4AAA719FDDF8BE78385B69E72C /* CKPhotoLibraryManager */,
+				49B685E359840C31FFF48FB0C4245E86 /* Pods-CKPhotoLibraryManager_Example */,
+				FB5BF29F22266C659D405032BF159218 /* Pods-CKPhotoLibraryManager_Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3E9E93EE96C92F23387A310686F775E6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E69173C81A844CB43329ED66C9BFCC6D /* Pods-CKPhotoLibraryManager_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5E7EA7B2CC1BFAB26ACFF0CE86C3519E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				005BFF809BD293A9E54CDFB5D4AE0A5A /* Pods-CKPhotoLibraryManager_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A42A304B631946095ACB71AEE726E45C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89CB603673E3A40D705B2634CA9A54D5 /* CKPhotoLibraryManager-dummy.m in Sources */,
+				353D2F380A7CF5679D88681A15318101 /* CKPhotoLibraryManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B179E827636B7BA4AD64704B7471F20A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CKPhotoLibraryManager;
+			target = E63A4B4AAA719FDDF8BE78385B69E72C /* CKPhotoLibraryManager */;
+			targetProxy = D6796CD402AB0FB8E511DF4940E5E3AE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		08BBE99C00D8461313FA2A276C947CA0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18A786A2C7314B4D6038A29F30B79E49 /* Pods-CKPhotoLibraryManager_Example.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-CKPhotoLibraryManager_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CKPhotoLibraryManager_Example/Pods-CKPhotoLibraryManager_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_CKPhotoLibraryManager_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		455E14D9A907EAD464E2C9CD621698EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 870F51402BA3B82B9B03F898B8F58EC5 /* Pods-CKPhotoLibraryManager_Example.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-CKPhotoLibraryManager_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CKPhotoLibraryManager_Example/Pods-CKPhotoLibraryManager_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_CKPhotoLibraryManager_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		56FCC5D14E05E6630B3668059EF767AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10239E1310FD59224CF614833A2ED4C1 /* Pods-CKPhotoLibraryManager_Tests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-CKPhotoLibraryManager_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CKPhotoLibraryManager_Tests/Pods-CKPhotoLibraryManager_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_CKPhotoLibraryManager_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		6B99697E273E41569BDBB287984C5E6D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A776747106DA0A420942034614801B9F /* CKPhotoLibraryManager.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/CKPhotoLibraryManager/CKPhotoLibraryManager-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CKPhotoLibraryManager/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/CKPhotoLibraryManager/CKPhotoLibraryManager.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = CKPhotoLibraryManager;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8DED8AD26D381A6ACFF202E5217EC498 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		963F10E57B9DAAD2C3D2A1D689DF42FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 646CC9BD9D1A6EA69569652505DAA2B9 /* Pods-CKPhotoLibraryManager_Tests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-CKPhotoLibraryManager_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CKPhotoLibraryManager_Tests/Pods-CKPhotoLibraryManager_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_CKPhotoLibraryManager_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9E1E4E48AF2EAB23169E611BF694090A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		D37E86113919DAE72A2F0C23027421B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A776747106DA0A420942034614801B9F /* CKPhotoLibraryManager.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/CKPhotoLibraryManager/CKPhotoLibraryManager-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CKPhotoLibraryManager/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/CKPhotoLibraryManager/CKPhotoLibraryManager.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = CKPhotoLibraryManager;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		04A1F31570425F3A922CFE3E3CE889AD /* Build configuration list for PBXNativeTarget "Pods-CKPhotoLibraryManager_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				455E14D9A907EAD464E2C9CD621698EA /* Debug */,
+				08BBE99C00D8461313FA2A276C947CA0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9E1E4E48AF2EAB23169E611BF694090A /* Debug */,
+				8DED8AD26D381A6ACFF202E5217EC498 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5B398D617644F7D2E68B385F3379BD93 /* Build configuration list for PBXNativeTarget "CKPhotoLibraryManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D37E86113919DAE72A2F0C23027421B4 /* Debug */,
+				6B99697E273E41569BDBB287984C5E6D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		832435279A3102B76FBB5A0881527C0B /* Build configuration list for PBXNativeTarget "Pods-CKPhotoLibraryManager_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				963F10E57B9DAAD2C3D2A1D689DF42FB /* Debug */,
+				56FCC5D14E05E6630B3668059EF767AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

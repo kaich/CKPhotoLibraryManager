@@ -1,0 +1,6 @@
+framework module Pods_CKPhotoLibraryManager_Tests {
+  umbrella header "Pods-CKPhotoLibraryManager_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

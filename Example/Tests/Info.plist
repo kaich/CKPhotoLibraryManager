@@ -20,5 +20,7 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>这是CKPhoto测试程序，请允许它访问相册</string>
 </dict>
 </plist>

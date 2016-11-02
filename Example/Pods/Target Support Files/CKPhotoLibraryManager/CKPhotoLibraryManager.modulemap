@@ -1,0 +1,6 @@
+framework module CKPhotoLibraryManager {
+  umbrella header "CKPhotoLibraryManager-umbrella.h"
+
+  export *
+  module * { export * }
+}

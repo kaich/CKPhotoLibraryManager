@@ -1,0 +1,16 @@
+PODS:
+  - CKPhotoLibraryManager (0.1.0)
+
+DEPENDENCIES:
+  - CKPhotoLibraryManager (from `../`)
+
+EXTERNAL SOURCES:
+  CKPhotoLibraryManager:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  CKPhotoLibraryManager: 8f98634346d09df09e43caab320726bf21e1cfc6
+
+PODFILE CHECKSUM: 7e51365de1a134c34c4980c6c3791fba9cf2a1e7
+
+COCOAPODS: 1.1.0.rc.2
