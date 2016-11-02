@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'CKPhotoLibraryManager_Example' do
+  pod 'CKPhotoLibraryManager', :path => '../'
+
+  target 'CKPhotoLibraryManager_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
