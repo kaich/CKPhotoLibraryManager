@@ -15,6 +15,14 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        CKPhotoLibraryManager.shared.didFindPermissionTrouble = { status in
+            let alert = UIAlertController(title: "", message: "请在iPhone的“设置-爱思助手-隐私-照片”选项中，允许爱思助手访问您照片。", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "暂不设置", style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "现在设置", style: .default, handler: { _ in
+                UIApplication.shared.openURL(URL(string: UIApplicationOpenSettingsURLString)!)
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,13 +32,28 @@ class ViewController: UIViewController {
 
     @IBAction func importAlbum(_ sender: AnyObject) {
         if let filePath = Bundle.main.path(forResource: "map", ofType: "png") {
-            CKPhotoLibraryManager.shared.addAssert(filePath: filePath, type: .image, albumName: "CKPhoto") { (isOK, path, error) in
+            CKPhotoLibraryManager.shared.addAsset(filePath: filePath, type: .image, albumName: "CKPhoto") { (isOK, path, error) in
                 if error == nil {
                     let alert = UIAlertController(title: "导入成功", message: nil, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "确定", style: .cancel, handler: nil))
                     self.present(alert, animated: true, completion: nil)
                 }
             }
         }
     }
+    
+    
+    @IBAction func importPhotoAlbum(_ sender: Any) {
+        if let filePath = Bundle.main.path(forResource: "map", ofType: "png") {
+            CKPhotoLibraryManager.shared.addAsset(filePath: filePath, type: .image) { (isOK, path, error) in
+                if error == nil {
+                    let alert = UIAlertController(title: "导入成功", message: nil, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "确定", style: .cancel, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+        }
+    }
+    
 }
 
