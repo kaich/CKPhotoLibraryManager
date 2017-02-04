@@ -44,16 +44,13 @@ public class CKPhotoLibraryManager: NSObject {
     }
     
 
-    //防止相册重复创建
-    var isAlbumCreateComplete = true
-    
     /// 添加指定名称的相册
     ///
     /// - parameter title:         相册名称
     /// - parameter completeBlock: 完成回调
     public func addAlbum(title :String, completeBlock :((String) -> Void)?) {
         authorize {
-        self.isAlbumCreateComplete = false
+        var albumCreateSemaphore = DispatchSemaphore(value: 0)
             
         let fetchOptions = PHFetchOptions()
         fetchOptions.predicate = NSPredicate(format: "title = %@", title)
@@ -62,7 +59,6 @@ public class CKPhotoLibraryManager: NSObject {
             if let completeBlock = completeBlock {
                 completeBlock(album.localIdentifier)
             }
-            self.isAlbumCreateComplete = true
             
             return
         }
@@ -77,14 +73,12 @@ public class CKPhotoLibraryManager: NSObject {
                     completeBlock((album?.localIdentifier)!)
                 }
             }
-            self.isAlbumCreateComplete = true
+            
+            albumCreateSemaphore.signal()
         }
             
             
-        while self.isAlbumCreateComplete == false {
-            RunLoop.current.run(mode: .defaultRunLoopMode , before: Date.distantFuture)
-        }
-            
+            albumCreateSemaphore.wait()
         }
     }
     
