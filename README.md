@@ -20,6 +20,20 @@ it, simply add the following line to your Podfile:
 pod "CKPhotoLibraryManager"
 ```
 
+## Usage 
+
+Simple to use:
+
+```swift
+CKPhotoLibraryManager.shared.addAsset(filePath: filePath, type: .image, albumName: "CKPhoto") { (isOK, path, error) in
+                if error == nil {
+                    let alert = UIAlertController(title: "导入成功", message: nil, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "确定", style: .cancel, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+```
+
 ## Author
 
 kaich, chengkai1853@163.com
