@@ -55,5 +55,17 @@ class ViewController: UIViewController {
         }
     }
     
+    
+    @IBAction func deletePhotoAlbum(_ sender: Any) {
+        CKPhotoLibraryManager.shared.deleteAlbum(title: "CKPhoto", isDeleteAssets: true) { (error) in
+            if error == nil {
+                let alert = UIAlertController(title: "删除成功", message: nil, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "确定", style: .cancel, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
+    }
+    
+    
 }
 

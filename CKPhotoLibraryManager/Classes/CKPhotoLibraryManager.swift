@@ -48,16 +48,14 @@ public class CKPhotoLibraryManager: NSObject {
     ///
     /// - parameter title:         相册名称
     /// - parameter completeBlock: 完成回调
-    public func addAlbum(title :String, completeBlock :((String) -> Void)?) {
+    public func addAlbum(title :String, completeBlock :((String,Error?) -> Void)?) {
         authorize {
-        var albumCreateSemaphore = DispatchSemaphore(value: 0)
+        let albumCreateSemaphore = DispatchSemaphore(value: 0)
             
-        let fetchOptions = PHFetchOptions()
-        fetchOptions.predicate = NSPredicate(format: "title = %@", title)
-        let albums = PHAssetCollection.fetchAssetCollections(with: .album, subtype: .any, options: fetchOptions)
+        let albums = self.fetchAlbums(type: .album, subType: .any, albumName: title)
         if let album = albums.firstObject {
             if let completeBlock = completeBlock {
-                completeBlock(album.localIdentifier)
+                completeBlock(album.localIdentifier,nil)
             }
             
             return
@@ -70,7 +68,12 @@ public class CKPhotoLibraryManager: NSObject {
         }) { (isFinish, error) in
             if isFinish == true && error == nil {
                 if let completeBlock = completeBlock {
-                    completeBlock((album?.localIdentifier)!)
+                    completeBlock((album?.localIdentifier)!,nil)
+                }
+            }
+            else {
+                if let completeBlock = completeBlock {
+                    completeBlock((album?.localIdentifier)!,error)
                 }
             }
             
@@ -82,6 +85,85 @@ public class CKPhotoLibraryManager: NSObject {
         }
     }
     
+
+    /// 删除相册
+    ///
+    /// - Parameters:
+    ///   - title: 名称
+    ///   - completeBlock: 完成回调
+    public func deleteAlbum(title :String, isDeleteAssets :Bool = false, completeBlock :((Error?) -> Void)?) {
+        authorize {
+            
+            let albums = self.fetchAlbums(type: .album, subType: .any, albumName: title)
+            guard let _ = albums.firstObject else {
+                if let completeBlock = completeBlock {
+                    let error = NSError(domain: "Album don't exist!", code: 302, userInfo: nil)
+                    completeBlock(error)
+                }
+                
+                return
+            }
+            
+            self.deleteAlbums(albums, isDeleteAssets: isDeleteAssets, completeBlock: completeBlock)
+        }
+    }
+    
+    
+    /// 删除相册
+    ///
+    /// - Parameters:
+    ///   - albums: 相册
+    ///   - isDeleteAssets: 是否删除相册里面的文件
+    ///   - completeBlock: 完成回调  error为nil时成功，否则失败
+    public func deleteAlbums(_ albums :PHFetchResult<PHAssetCollection>, isDeleteAssets :Bool = false, completeBlock :((Error?) -> Void)?) {
+        authorize {
+        var isReadyDeleteAlbum = true
+        if isDeleteAssets {
+            let albumDeleteSemaphore = DispatchSemaphore(value: 0)
+            for i in 0...(albums.count - 1) {
+                let album = albums.object(at: i)
+                if let assets = self.fetchAssetsInAlbum(album: album) {
+                    self.deleteAssets(assets: assets, completeBlock: { (error) in
+                        if let error = error {
+                            if let completeBlock = completeBlock {
+                                completeBlock(error)
+                            }
+                            isReadyDeleteAlbum = false
+                            
+                            albumDeleteSemaphore.signal()
+                            return 
+                        }
+                        
+                        if i == albums.count - 1 {
+                            albumDeleteSemaphore.signal()
+                        }
+                    })
+                }
+            }
+            
+            albumDeleteSemaphore.wait()
+        }
+            
+        if isReadyDeleteAlbum {
+            PHPhotoLibrary.shared().performChanges({
+                PHAssetCollectionChangeRequest.deleteAssetCollections(albums)
+            }) { (isFinish, error) in
+                if isFinish == true && error == nil {
+                    if let completeBlock = completeBlock {
+                        completeBlock(nil)
+                    }
+                }
+                else {
+                    if let completeBlock = completeBlock {
+                        completeBlock(error)
+                    }
+                }
+                
+            }
+        }
+        
+        }
+    }
     
     /// 获取相册
     ///
@@ -152,7 +234,7 @@ public class CKPhotoLibraryManager: NSObject {
             }
             
             }, completionHandler: { success, error in
-                if !success { NSLog("error creating asset: \(error)") }
+                if !success { NSLog("error creating asset: \(String(describing: error))") }
                 if let completeBlock = completeBlock {
                     completeBlock(success, url , error)
                 }
@@ -181,7 +263,7 @@ public class CKPhotoLibraryManager: NSObject {
             })
         }
         else {
-           self.addAlbum(title: albumName, completeBlock: { (identifier) in
+           self.addAlbum(title: albumName, completeBlock: { (identifier, error) in
                 let albums = PHAssetCollection.fetchAssetCollections(withLocalIdentifiers: [identifier], options: nil)
                 if let album = albums.firstObject {
                     self.addAsset(url: url, type: type, to: album, completeBlock: { (isOK, image, error) in
@@ -192,7 +274,6 @@ public class CKPhotoLibraryManager: NSObject {
                 }
            })
         }
-            
             
         }
     }
@@ -214,5 +295,57 @@ public class CKPhotoLibraryManager: NSObject {
     }
     
     
+    /// 删除资源
+    ///
+    /// - Parameters:
+    ///   - assets: 视频或者图片
+    ///   - completeBlock: 完成回调
+    public func deleteAssets(assets :PHFetchResult<PHAsset>, completeBlock :((Error?) -> Void)?) {
+        authorize {
+            
+            PHPhotoLibrary.shared().performChanges({
+                PHAssetChangeRequest.deleteAssets(assets)
+            }) { (isFinish, error) in
+                if isFinish == true && error == nil {
+                    if let completeBlock = completeBlock {
+                        completeBlock(nil)
+                    }
+                }
+                else {
+                    if let completeBlock = completeBlock {
+                        completeBlock(error)
+                    }
+                }
+                
+            }
+            
+        }
+    }
+   
+    
+    /// 指定相册查找资源
+    ///
+    /// - Parameters:
+    ///   - albumName: 相册名称
+    ///   - options: 选项
+    /// - Returns: 查询结果
+    public func fetchAssetsInAlbum(albumName :String, options: PHFetchOptions? = nil) -> PHFetchResult<PHAsset>? {
+        let albums = fetchAlbums(albumName: albumName)
+        if let album = albums.firstObject {
+            return fetchAssetsInAlbum(album: album)
+        }
+        return nil
+    }
+    
+    
+    /// 指定相册查找资源
+    ///
+    /// - Parameters:
+    ///   - album: 相册
+    ///   - options: 选项
+    /// - Returns: 查询结果
+    public func fetchAssetsInAlbum(album :PHAssetCollection, options: PHFetchOptions? = nil) -> PHFetchResult<PHAsset>? {
+        return PHAsset.fetchAssets(in: album, options: options)
+    }
     
 }
