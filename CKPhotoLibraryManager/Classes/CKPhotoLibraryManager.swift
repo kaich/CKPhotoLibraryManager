@@ -21,7 +21,7 @@ public class CKPhotoLibraryManager: NSObject {
     /// 提示授权
     ///
     /// - parameter successfulBlock: 如果授权成功执行回调
-    public func authorize(successfulBlock :((Void) -> Void)?) {
+    public func authorize(successfulBlock :(() -> ())?) {
         if PHPhotoLibrary.authorizationStatus() != .authorized {
             PHPhotoLibrary.requestAuthorization({ (status) in
                 if status == .authorized {
@@ -216,6 +216,7 @@ public class CKPhotoLibraryManager: NSObject {
         authorize {
         
         PHPhotoLibrary.shared().performChanges({
+            var placeholder: PHObjectPlaceholder?
             var creationRequest :PHAssetChangeRequest? = nil
             if type == .image {
                 creationRequest = PHAssetChangeRequest.creationRequestForAssetFromImage(atFileURL: url)
@@ -223,11 +224,13 @@ public class CKPhotoLibraryManager: NSObject {
             else if type == .video {
                 creationRequest = PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: url)
             }
+            
+            placeholder = creationRequest?.placeholderForCreatedAsset
 
             if let album = album {
                 guard let addAssetRequest = PHAssetCollectionChangeRequest(for: album)
                     else { return }
-                guard let placeholder = creationRequest?.placeholderForCreatedAsset else {
+                guard let placeholder = placeholder else {
                     return
                 }
                 addAssetRequest.addAssets([placeholder] as NSArray)
@@ -239,6 +242,50 @@ public class CKPhotoLibraryManager: NSObject {
                     completeBlock(success, url , error)
                 }
         })
+            
+        }
+    }
+    
+    
+    /// 添加LivePhoto指定相册
+    ///
+    /// - parameter imageUrl:      图片url
+    /// - parameter videoUrl:      视频url
+    /// - parameter album:         相册
+    /// - parameter completeBlock: 完成回调
+    public func addLivePhotoAsset(imageUrl: URL, videoUrl: URL, to album: PHAssetCollection?, completeBlock :((Bool,URL,URL,Error?) -> Void)?) {
+        guard #available(iOS 9.1, *) else {
+            if let completeBlock = completeBlock {
+                completeBlock(false, imageUrl, videoUrl, NSError(domain: "IOS 9.1 available", code: -100, userInfo: nil))
+            }
+            return
+        }
+
+        authorize {
+            PHPhotoLibrary.shared().performChanges({
+                
+                var placeholder: PHObjectPlaceholder?
+                let creationRequest = PHAssetCreationRequest.forAsset()
+                creationRequest.addResource(with: .photo, fileURL: imageUrl, options: nil)
+                creationRequest.addResource(with: .pairedVideo, fileURL: videoUrl, options: nil)
+                
+                placeholder = creationRequest.placeholderForCreatedAsset
+
+                if let album = album {
+                    guard let addAssetRequest = PHAssetCollectionChangeRequest(for: album)
+                        else { return }
+                    guard let placeholder = placeholder else {
+                        return
+                    }
+                    addAssetRequest.addAssets([placeholder] as NSArray)
+                }
+                
+            }, completionHandler: { success, error in
+                if !success { NSLog("error creating asset: \(String(describing: error))") }
+                if let completeBlock = completeBlock {
+                    completeBlock(success, imageUrl, videoUrl, error)
+                }
+            })
             
         }
     }
