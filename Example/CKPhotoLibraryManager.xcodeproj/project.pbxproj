@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		04FCA0801DCA13250022EE95 /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = 04FCA07F1DCA13250022EE95 /* map.png */; };
 		3FD48D4B1A47E3108F320370 /* Pods_CKPhotoLibraryManager_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC9C965449D2E25E7E3D42B6 /* Pods_CKPhotoLibraryManager_Tests.framework */; };
+		4D2EA8AF2060F0D000C40B5F /* IMG_0350.MOV in Resources */ = {isa = PBXBuildFile; fileRef = 4D2EA8AD2060F0CF00C40B5F /* IMG_0350.MOV */; };
+		4D2EA8B02060F0D000C40B5F /* IMG_0350.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 4D2EA8AE2060F0CF00C40B5F /* IMG_0350.JPG */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -33,6 +35,8 @@
 		0FA5EB6BA48E51113730E976 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		3CF58440CF5E90F66ECA45C0 /* Pods-CKPhotoLibraryManager_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CKPhotoLibraryManager_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-CKPhotoLibraryManager_Example/Pods-CKPhotoLibraryManager_Example.release.xcconfig"; sourceTree = "<group>"; };
 		482CCB2FAAF2BA6DF13DC790 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		4D2EA8AD2060F0CF00C40B5F /* IMG_0350.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = IMG_0350.MOV; sourceTree = "<group>"; };
+		4D2EA8AE2060F0CF00C40B5F /* IMG_0350.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_0350.JPG; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* CKPhotoLibraryManager_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CKPhotoLibraryManager_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +110,8 @@
 		607FACD21AFB9204008FA782 /* Example for CKPhotoLibraryManager */ = {
 			isa = PBXGroup;
 			children = (
+				4D2EA8AE2060F0CF00C40B5F /* IMG_0350.JPG */,
+				4D2EA8AD2060F0CF00C40B5F /* IMG_0350.MOV */,
 				04FCA07F1DCA13250022EE95 /* map.png */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
@@ -218,12 +224,12 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = P7ZM98256Z;
+						DevelopmentTeam = W49U7GSUES;
 						LastSwiftMigration = 0800;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = P7ZM98256Z;
+						DevelopmentTeam = W49U7GSUES;
 						LastSwiftMigration = 0800;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -256,6 +262,8 @@
 				04FCA0801DCA13250022EE95 /* map.png in Resources */,
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
+				4D2EA8B02060F0D000C40B5F /* IMG_0350.JPG in Resources */,
+				4D2EA8AF2060F0D000C40B5F /* IMG_0350.MOV in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -497,7 +505,7 @@
 			baseConfigurationReference = E948BB89DE4DDAEB0EBAA86D /* Pods-CKPhotoLibraryManager_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = P7ZM98256Z;
+				DEVELOPMENT_TEAM = W49U7GSUES;
 				INFOPLIST_FILE = CKPhotoLibraryManager/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -512,7 +520,7 @@
 			baseConfigurationReference = 3CF58440CF5E90F66ECA45C0 /* Pods-CKPhotoLibraryManager_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = P7ZM98256Z;
+				DEVELOPMENT_TEAM = W49U7GSUES;
 				INFOPLIST_FILE = CKPhotoLibraryManager/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -526,7 +534,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 82BD17A438A6CD6576189CE4 /* Pods-CKPhotoLibraryManager_Tests.debug.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = P7ZM98256Z;
+				DEVELOPMENT_TEAM = W49U7GSUES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -547,7 +555,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E87D53DF6BD94759FE208425 /* Pods-CKPhotoLibraryManager_Tests.release.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = P7ZM98256Z;
+				DEVELOPMENT_TEAM = W49U7GSUES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",

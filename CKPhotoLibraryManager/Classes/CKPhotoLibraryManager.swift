@@ -10,7 +10,7 @@ import UIKit
 import Photos
 
 public enum CKPhotoType {
-    case image, video
+    case image, video, livePhoto
 }
 
 public class CKPhotoLibraryManager: NSObject {
@@ -209,23 +209,54 @@ public class CKPhotoLibraryManager: NSObject {
     /// 添加图片或者视频到指定相册
     ///
     /// - parameter url:           图片或者视频url
+    /// - parameter url2:          LivePhoto视频地址,只有livePhoto才用到
     /// - parameter type:          图片或者视频
     /// - parameter album:         相册
     /// - parameter completeBlock: 完成回调
-    public func addAsset(url: URL, type :CKPhotoType, to album: PHAssetCollection?, completeBlock :((Bool,URL,Error?) -> Void)?) {
+    public func addAsset(url: URL, url2: URL? = nil, type :CKPhotoType, to album: PHAssetCollection?, completeBlock :((Bool,URL,Error?) -> Void)?) {
+        
+        if type == .livePhoto {
+            guard #available(iOS 9.1, *) else {
+                if let completeBlock = completeBlock {
+                    completeBlock(false, url, NSError(domain: "IOS 9.1 available", code: -100, userInfo: nil))
+                }
+                return
+            }
+            
+            guard url2 != nil else {
+                if let completeBlock = completeBlock {
+                    completeBlock(false, url, NSError(domain: "url2 can't be nil for live photo", code: -101, userInfo: nil))
+                }
+                return
+            }
+            
+        }
+        
         authorize {
         
         PHPhotoLibrary.shared().performChanges({
             var placeholder: PHObjectPlaceholder?
             var creationRequest :PHAssetChangeRequest? = nil
-            if type == .image {
-                creationRequest = PHAssetChangeRequest.creationRequestForAssetFromImage(atFileURL: url)
+            if type == .livePhoto {
+
+                if #available(iOS 9.1, *) {
+                    let creationRequest = PHAssetCreationRequest.forAsset()
+                    creationRequest.addResource(with: .photo, fileURL: url, options: nil)
+                    creationRequest.addResource(with: .pairedVideo, fileURL: url2!, options: nil)
+                    
+                    placeholder = creationRequest.placeholderForCreatedAsset
+                }
             }
-            else if type == .video {
-                creationRequest = PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: url)
+            else {
+                if type == .image {
+                    creationRequest = PHAssetChangeRequest.creationRequestForAssetFromImage(atFileURL: url)
+                }
+                else if type == .video {
+                    creationRequest = PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: url)
+                }
+                
+                placeholder = creationRequest?.placeholderForCreatedAsset
             }
-            
-            placeholder = creationRequest?.placeholderForCreatedAsset
 
             if let album = album {
                 guard let addAssetRequest = PHAssetCollectionChangeRequest(for: album)
@@ -247,63 +278,20 @@ public class CKPhotoLibraryManager: NSObject {
     }
     
     
-    /// 添加LivePhoto指定相册
-    ///
-    /// - parameter imageUrl:      图片url
-    /// - parameter videoUrl:      视频url
-    /// - parameter album:         相册
-    /// - parameter completeBlock: 完成回调
-    public func addLivePhotoAsset(imageUrl: URL, videoUrl: URL, to album: PHAssetCollection?, completeBlock :((Bool,URL,URL,Error?) -> Void)?) {
-        guard #available(iOS 9.1, *) else {
-            if let completeBlock = completeBlock {
-                completeBlock(false, imageUrl, videoUrl, NSError(domain: "IOS 9.1 available", code: -100, userInfo: nil))
-            }
-            return
-        }
-
-        authorize {
-            PHPhotoLibrary.shared().performChanges({
-                
-                var placeholder: PHObjectPlaceholder?
-                let creationRequest = PHAssetCreationRequest.forAsset()
-                creationRequest.addResource(with: .photo, fileURL: imageUrl, options: nil)
-                creationRequest.addResource(with: .pairedVideo, fileURL: videoUrl, options: nil)
-                
-                placeholder = creationRequest.placeholderForCreatedAsset
-
-                if let album = album {
-                    guard let addAssetRequest = PHAssetCollectionChangeRequest(for: album)
-                        else { return }
-                    guard let placeholder = placeholder else {
-                        return
-                    }
-                    addAssetRequest.addAssets([placeholder] as NSArray)
-                }
-                
-            }, completionHandler: { success, error in
-                if !success { NSLog("error creating asset: \(String(describing: error))") }
-                if let completeBlock = completeBlock {
-                    completeBlock(success, imageUrl, videoUrl, error)
-                }
-            })
-            
-        }
-    }
-    
-    
     /// 添加图片或者视频到指定相册，如果没有该相册就创建
     ///
     /// - parameter filePath:      视频或者图片路径
     /// - parameter type:          视频或图片
     /// - parameter albumName:     相册名称
     /// - parameter completeBlock: 完成回调
-    public func addAsset(filePath :String, type :CKPhotoType, albumName :String, completeBlock :((Bool,String,Error?) -> Void)?) {
+    public func addAsset(filePath :String, filePath2: String? = nil, type :CKPhotoType, albumName :String, completeBlock :((Bool,String,Error?) -> Void)?) {
         authorize {
         
         let url  = URL(fileURLWithPath: filePath)
+        let url2  = filePath2 == nil ? nil : URL(fileURLWithPath: filePath2!)
         let albums = self.fetchAlbums(albumName: albumName)
         if let album = albums.firstObject {
-            self.addAsset(url: url, type: type , to: album, completeBlock: { (isOK, url, error) in
+            self.addAsset(url: url, url2: url2, type: type , to: album, completeBlock: { (isOK, url, error) in
                 if let completeBlock = completeBlock {
                    completeBlock(isOK, filePath, error)
                 }
@@ -313,7 +301,7 @@ public class CKPhotoLibraryManager: NSObject {
            self.addAlbum(title: albumName, completeBlock: { (identifier, error) in
                 let albums = PHAssetCollection.fetchAssetCollections(withLocalIdentifiers: [identifier], options: nil)
                 if let album = albums.firstObject {
-                    self.addAsset(url: url, type: type, to: album, completeBlock: { (isOK, image, error) in
+                    self.addAsset(url: url, url2: url2, type: type, to: album, completeBlock: { (isOK, image, error) in
                         if let completeBlock = completeBlock {
                            completeBlock(isOK, filePath, error)
                         }
@@ -332,9 +320,10 @@ public class CKPhotoLibraryManager: NSObject {
     ///   - filePath: 视频或者图片路径
     ///   - type:          视频或图片
     ///   - completeBlock: 完成回调
-    public func addAsset(filePath :String, type :CKPhotoType, completeBlock :((Bool,String,Error?) -> Void)?) {
+    public func addAsset(filePath :String, filePath2: String? = nil, type :CKPhotoType, completeBlock :((Bool,String,Error?) -> Void)?) {
         let url  = URL(fileURLWithPath: filePath)
-        addAsset(url: url, type: type, to: nil, completeBlock: { (isOK, url, error) in
+        let url2  = filePath2 == nil ? nil : URL(fileURLWithPath: filePath2!)
+        addAsset(url: url, url2: url2, type: type, to: nil, completeBlock: { (isOK, url, error) in
             if let completeBlock = completeBlock {
                 completeBlock(isOK,filePath,error)
             }
