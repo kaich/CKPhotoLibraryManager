@@ -34,6 +34,20 @@ CKPhotoLibraryManager.shared.addAsset(filePath: filePath, type: .image, albumNam
             }
 ```
 
+Live Photo: 
+
+```swift 
+if let filePath = Bundle.main.path(forResource: "IMG_0350", ofType: "JPG"), let filePath2 = Bundle.main.path(forResource: "IMG_0350", ofType: "MOV") {
+    CKPhotoLibraryManager.shared.addAsset(filePath: filePath,  filePath2: filePath2, type: .livePhoto) { (isOK, path, error) in
+        if error == nil {
+            let alert = UIAlertController(title: "导入成功", message: nil, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "确定", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+}
+```
+
 ## Author
 
 kaich, chengkai1853@163.com
