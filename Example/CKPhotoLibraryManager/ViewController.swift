@@ -19,7 +19,7 @@ class ViewController: UIViewController {
             let alert = UIAlertController(title: "", message: "请在iPhone的“设置-爱思助手-隐私-照片”选项中，允许爱思助手访问您照片。", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "暂不设置", style: .cancel, handler: nil))
             alert.addAction(UIAlertAction(title: "现在设置", style: .default, handler: { _ in
-                UIApplication.shared.openURL(URL(string: UIApplicationOpenSettingsURLString)!)
+                UIApplication.shared.openURL(URL(string: UIApplication.openSettingsURLString)!)
             }))
             self.present(alert, animated: true, completion: nil)
         }

@@ -13,6 +13,16 @@ public enum CKPhotoType {
     case image, video, livePhoto
 }
 
+public enum CKPhotoAccessLevel: Int {
+    case addOnly = 1
+    case readWrite = 2
+    
+    @available(iOS 14, *)
+    var level: PHAccessLevel {
+        return PHAccessLevel(rawValue: rawValue)!
+    }
+}
+
 public class CKPhotoLibraryManager: NSObject {
     
     public static let shared = CKPhotoLibraryManager()
@@ -21,9 +31,9 @@ public class CKPhotoLibraryManager: NSObject {
     /// 提示授权
     ///
     /// - parameter successfulBlock: 如果授权成功执行回调
-    public func authorize(successfulBlock :(() -> ())?) {
+    public func authorize(for level: CKPhotoAccessLevel = .readWrite, successfulBlock :(() -> ())?) {
         if PHPhotoLibrary.authorizationStatus() != .authorized {
-            PHPhotoLibrary.requestAuthorization({ (status) in
+            let handleTask = { (status: PHAuthorizationStatus) in
                 if status == .authorized {
                     if let successfulBlock = successfulBlock {
                         successfulBlock()
@@ -34,7 +44,17 @@ public class CKPhotoLibraryManager: NSObject {
                         didFindPermissionTrouble(status)
                     }
                 }
-            })
+            }
+            if #available(iOS 14, *) {
+                PHPhotoLibrary.requestAuthorization(for: level.level) { (status) in
+                    handleTask(status)
+                }
+            } else {
+                PHPhotoLibrary.requestAuthorization({ (status) in
+                    handleTask(status)
+                })
+            }
+
         }
         else {
             if let successfulBlock = successfulBlock {
@@ -173,7 +193,7 @@ public class CKPhotoLibraryManager: NSObject {
     ///   - options: 条件
     /// - Returns:  符合条件的相册
     public func fetchAlbums(type :PHAssetCollectionType, subType :PHAssetCollectionSubtype, options :PHFetchOptions? = nil) -> PHFetchResult<PHAssetCollection> {
-        let albums = PHAssetCollection.fetchAssetCollections(with: .album, subtype: .any, options: options)
+        let albums = PHAssetCollection.fetchAssetCollections(with: type, subtype: subType, options: options)
         return albums
     }
     
